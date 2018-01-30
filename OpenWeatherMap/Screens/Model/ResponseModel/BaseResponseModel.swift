@@ -2,7 +2,7 @@ import ObjectMapper
 
 class BaseResponseModel: Mappable {
 
-    var cod: Int?
+    var cod: String?
     var message: String?
 
     init() { }
