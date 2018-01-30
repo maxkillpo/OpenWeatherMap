@@ -1,5 +1,6 @@
 import RxSwift
 import RxCocoa
+import Service
 
 class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> {
 
@@ -11,6 +12,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
     @IBOutlet weak var showImageVIew: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
                     .viewModel
                     .requestWeather(cityID: text ?? "error")
                     .catchError { error in
-                        return Observable
-                            .just(WeahterResponseModel().isError())}
+                        return Observable.just(WeahterResponseModel().isError())}
             }
             .asDriver(onErrorJustReturn: WeahterResponseModel().isError())
 
@@ -45,6 +46,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .asDriver(onErrorJustReturn: false)
 
         running
+            .skip(1)
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
@@ -56,22 +58,49 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(pleasureLabel.rx.text)
             .disposed(by: disposeBag)
 
-        search.map { String(describing: $0.city?.name) }
+        search.map { String(describing: $0.city?.name ?? "No City") }
             .drive(countryLabel.rx.text)
             .disposed(by: disposeBag)
 
+        search.map { String(describing: $0.message ?? "") }
+            .drive(errorLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        changeuUnitsButton
+            .rx
+            .controlEvent(.touchUpInside)
+            .map { false }
+            .asObservable()
+
+    }
+
+    func switchCalculate(int: Int,temp: Double?) -> String {
+        switch int {
+        case 1:
+            return calculateKelvinToCessasius(temp: temp)
+        case 2:
+            return calculateKelvinToFahrenheit(temp: temp)
+        default: return ""
+        }
     }
 
     func calculateKelvinToCessasius(temp: Double?) -> String {
         guard let T = temp else {
-            return "nil"
+            return "E"
         }
-        return String((T - 273.15).rounded(toPlaces: 10))
+        return String((T - 273.15).rounded(toPlaces: 10)) + " C"
+    }
+
+    func calculateKelvinToFahrenheit(temp: Double?) -> String {
+        guard let T = temp else {
+            return "E"
+        }
+        return String(((T - 273.15) * 1.8000 + 32.00).rounded(toPlaces: 10)) + " F"
     }
 
     func validateHumidity(humidity: Int?) -> String {
         guard let H = humidity else {
-            return "nil"
+            return "E"
         }
         return String(H)
     }

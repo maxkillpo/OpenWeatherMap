@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="อุณภูมิ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C8-5H-Xk4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C8-5H-Xk4">
                                 <rect key="frame" x="20" y="189" width="157.5" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="dRj-SG-J73"/>
@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ความชื่น" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gho-cI-6VF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gho-cI-6VF">
                                 <rect key="frame" x="197.5" y="189" width="157.5" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="100" id="wFe-i5-bCK"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ใส่ชื่อเมือง" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-Xg-Ihj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="กรอกไอดีชื่อเมือง" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-Xg-Ihj">
                                 <rect key="frame" x="138" y="109" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ewJ-vo-jLf"/>
@@ -61,8 +61,8 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-iL-jJv">
                                 <rect key="frame" x="98" y="119" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-pp-mqt">
-                                <rect key="frame" x="167" y="80" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-pp-mqt">
+                                <rect key="frame" x="172.5" y="80" width="31" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,9 +79,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orD-cy-1iG">
+                                <rect key="frame" x="188" y="157" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="orD-cy-1iG" firstAttribute="top" secondItem="8Pa-Xg-Ihj" secondAttribute="bottom" constant="8" id="8PB-3I-A7S"/>
                             <constraint firstItem="gho-cI-6VF" firstAttribute="width" secondItem="0C8-5H-Xk4" secondAttribute="width" id="8gI-Bz-va5"/>
                             <constraint firstItem="WaH-iL-jJv" firstAttribute="centerY" secondItem="8Pa-Xg-Ihj" secondAttribute="centerY" id="Elg-fn-o0c"/>
                             <constraint firstItem="8Pa-Xg-Ihj" firstAttribute="top" secondItem="pF1-iF-JfU" secondAttribute="top" constant="45" id="FNp-bX-VBZ"/>
@@ -100,6 +107,7 @@
                             <constraint firstItem="DVg-dz-3X4" firstAttribute="top" secondItem="gho-cI-6VF" secondAttribute="top" id="dSO-BI-nMp"/>
                             <constraint firstItem="pF1-iF-JfU" firstAttribute="trailing" secondItem="yia-97-axj" secondAttribute="trailing" constant="40" id="f3h-qg-7L2"/>
                             <constraint firstItem="8Pa-Xg-Ihj" firstAttribute="centerX" secondItem="pF1-iF-JfU" secondAttribute="centerX" id="jkt-th-xrz"/>
+                            <constraint firstItem="orD-cy-1iG" firstAttribute="centerX" secondItem="8Pa-Xg-Ihj" secondAttribute="centerX" id="k2a-B8-M2d"/>
                             <constraint firstItem="8Pa-Xg-Ihj" firstAttribute="top" secondItem="Tgr-pp-mqt" secondAttribute="bottom" constant="8" id="ks5-3b-gpe"/>
                             <constraint firstItem="Zhq-Qh-Iwk" firstAttribute="centerX" secondItem="8Pa-Xg-Ihj" secondAttribute="centerX" id="l7F-nT-WPs"/>
                             <constraint firstItem="Vhs-VA-d7s" firstAttribute="top" secondItem="Zhq-Qh-Iwk" secondAttribute="bottom" constant="40" id="ocX-lD-AZk"/>
@@ -113,6 +121,7 @@
                         <outlet property="activityIndicator" destination="WaH-iL-jJv" id="WQd-EY-3RY"/>
                         <outlet property="changeuUnitsButton" destination="Zhq-Qh-Iwk" id="6XI-hJ-brT"/>
                         <outlet property="countryLabel" destination="Tgr-pp-mqt" id="uXD-D0-Fwv"/>
+                        <outlet property="errorLabel" destination="orD-cy-1iG" id="bQ8-p9-VOb"/>
                         <outlet property="page2Button" destination="yia-97-axj" id="z0I-DI-xcH"/>
                         <outlet property="pleasureLabel" destination="gho-cI-6VF" id="v4x-Ho-NzT"/>
                         <outlet property="searchCitiesTextField" destination="8Pa-Xg-Ihj" id="MFe-Sd-qJD"/>

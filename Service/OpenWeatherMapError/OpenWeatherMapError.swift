@@ -1,4 +1,4 @@
-enum OpenWeatherMapError: Error {
+public enum OpenWeatherMapError: Error {
     case mapperError
     case mapperErrorResponseNil
     case responseErrorNon200

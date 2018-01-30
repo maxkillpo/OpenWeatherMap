@@ -4,35 +4,55 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
   - IQKeyboardManagerSwift (5.0.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - ObjectMapper (3.1.0)
   - RxAlamofire (4.0.0):
     - RxAlamofire/Core (= 4.0.0)
   - RxAlamofire/Core (4.0.0):
     - Alamofire (~> 4.5)
     - RxSwift (~> 4.0)
+  - RxBlocking (4.1.1):
+    - RxSwift (~> 4.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
+  - RxTest (4.1.1):
+    - RxSwift (~> 4.0)
   - SwiftyJSON (4.0.0)
+  - XCGLogger (6.0.1):
+    - XCGLogger/Core (= 6.0.1)
+  - XCGLogger/Core (6.0.1):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
   - AlamofireObjectMapper (= 5.0)
   - IQKeyboardManagerSwift (= 5.0.0)
   - RxAlamofire (= 4.0.0)
+  - RxBlocking (~> 4.0)
   - RxCocoa
+  - RxCocoa (= 4.0.0)
   - RxSwift
+  - RxSwift (= 4.0.0)
+  - RxTest (~> 4.0)
   - SwiftyJSON
+  - XCGLogger (= 6.0.1)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
+  RxBlocking: 22e7d7b86a1c0c42164a30d64f56f97128b4ffab
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxTest: f934010a5b07ecd627cb70b38eb4baf0414591d2
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  XCGLogger: b4ca980580108cfeaf221afe158f5d89c1be22e0
 
-PODFILE CHECKSUM: af6b4cdc51e10ea96f6f3d7b78309cefbbb71002
+PODFILE CHECKSUM: b427fb41cc37fe99966ab19511561fa0d78a5e27
 
 COCOAPODS: 1.3.1

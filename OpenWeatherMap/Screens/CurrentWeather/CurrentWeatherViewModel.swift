@@ -1,4 +1,5 @@
 import RxSwift
+import Service
 
 class CurrentWeatherViewModel: BaseViewModel {
 
