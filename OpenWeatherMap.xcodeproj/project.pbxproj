@@ -190,11 +190,13 @@
 		76B13AD0202024E90050FBCF /* OpenWeatherMap */ = {
 			isa = PBXGroup;
 			children = (
-				76B13AD1202024E90050FBCF /* AppDelegate.swift */,
-				76B13AD3202024E90050FBCF /* ViewController.swift */,
+				76B13B3C20202E8E0050FBCF /* Model */,
+				76B13B3920202C1F0050FBCF /* Service */,
 				76B13B4520205E4E0050FBCF /* Error */,
 				76B13B08202027B90050FBCF /* Screens */,
 				76B13AD5202024E90050FBCF /* Main.storyboard */,
+				76B13AD1202024E90050FBCF /* AppDelegate.swift */,
+				76B13AD3202024E90050FBCF /* ViewController.swift */,
 				76B13ADB202024E90050FBCF /* Assets.xcassets */,
 				76B13ADD202024E90050FBCF /* LaunchScreen.storyboard */,
 				76B13AE0202024E90050FBCF /* Info.plist */,
@@ -224,8 +226,6 @@
 		76B13B08202027B90050FBCF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				76B13B3C20202E8E0050FBCF /* Model */,
-				76B13B3920202C1F0050FBCF /* Service */,
 				76B13B09202027C80050FBCF /* Base */,
 				76B13B2F20202A060050FBCF /* CurrentWeather */,
 				76B13B3020202A280050FBCF /* Weather7Day */,
