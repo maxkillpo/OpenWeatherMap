@@ -48,7 +48,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
-        search.map { self.calculateTemp(temp: $0.list?[0].main?.temp) }
+        search.map { self.calculateKelvinToCessasius(temp: $0.list?[0].main?.temp) }
             .drive(temperatureLabel.rx.text)
             .disposed(by: disposeBag)
 
@@ -62,7 +62,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
 
     }
 
-    func calculateTemp(temp: Double?) -> String {
+    func calculateKelvinToCessasius(temp: Double?) -> String {
         guard let T = temp else {
             return "nil"
         }
