@@ -1,19 +1,20 @@
 import ObjectMapper
 
-class WeahterResponseModel: Mappable {
+class WeahterResponseModel: BaseResponseModel {
 
-    var cod: String?
-    var message: String?
     var list: [MapListModel]?
     var city: MapCityResponseModel?
 
-    init() { }
+    override init() {
+        super.init()
+    }
 
-    required init?(map: Map) { }
+    required init?(map: Map) {
+        super.init(map: map)
+    }
 
-    func mapping(map: Map) {
-        cod <- map["cod"]
-        message <- map["message"]
+    override func mapping(map: Map) {
+        super.mapping(map: map)
         list <- map["list"]
         city <- map["city"]
     }

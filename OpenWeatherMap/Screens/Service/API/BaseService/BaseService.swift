@@ -1,12 +1,18 @@
 import RxSwift
 import RxCocoa
 import SwiftyJSON
-import ObjectMapper
 
-class BaseService<Response: BaseMappable> {
+class BaseService<Response: BaseResponseModel> {
 
     private let baseURL = URL(string: "http://api.openweathermap.org/data/2.5")!
     private let session = URLSession.shared
+
+    func validateResponse(response: Response) throws -> Observable<Response>{
+        guard response.cod == 200 else {
+            throw OpenWeatherMapError.responseErrorNon200
+        }
+        return Observable.of(response)
+    }
 
     func buildRequest(method: String = "GET", pathComponent: String, params: [String: Any]) -> Observable<Response> {
 
@@ -29,6 +35,10 @@ class BaseService<Response: BaseMappable> {
         }
             .map { json in
                 try JsonMapper()
-                    .jsonMapper(json.dictionaryObject)}
+                    .jsonMapper(json.dictionaryObject)
+        }
+        .map { response in
+            try self.validateResponse(response: response)
+        }
     }
 }
