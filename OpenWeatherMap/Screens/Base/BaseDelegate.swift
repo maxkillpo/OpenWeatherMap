@@ -1,0 +1,3 @@
+protocol BaseDelegate: class {
+
+}
