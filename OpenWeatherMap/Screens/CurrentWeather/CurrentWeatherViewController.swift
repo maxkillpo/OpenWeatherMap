@@ -35,6 +35,19 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             }
             .asDriver(onErrorJustReturn: WeahterResponseModel().isError())
 
+        let running = Observable
+            .from([
+                searchInput.map { _ in true },
+                search.map { _ in false }.asObservable()
+                ])
+            .merge()
+            .startWith(true)
+            .asDriver(onErrorJustReturn: false)
+
+        running
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+
         search.map { String(describing: $0.list?[0].main?.temp) }
             .drive(temperatureLabel.rx.text)
             .disposed(by: disposeBag)
