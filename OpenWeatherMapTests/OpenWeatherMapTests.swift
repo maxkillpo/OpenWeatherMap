@@ -22,6 +22,9 @@ class OpenWeatherMapTests: XCTestCase {
     }
     
     func testExample() {
+        let exec = expectation(description: "Max")
+        CurrentWeatherService().currentWeather(request: WeahterRequestModel.init(id: "1609350", cnt: "7"))
+        waitForExpectations(timeout: 5.0, handler: nil)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
