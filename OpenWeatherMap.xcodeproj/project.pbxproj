@@ -77,11 +77,6 @@
 		76B13B02202027320050FBCF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		76B13B04202027730050FBCF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		76B13B062020278E0050FBCF /* BaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDelegate.swift; sourceTree = "<group>"; };
-		76B13B11202027E20050FBCF /* OpenWeatherMapService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherMapService.h; sourceTree = "<group>"; };
-		76B13B12202027E20050FBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76B13B1E202027E20050FBCF /* OpenWeatherMapServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapServiceTests.swift; sourceTree = "<group>"; };
-		76B13B20202027E20050FBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76B13B2D202028CD0050FBCF /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		94C87FC2D0E8C3CF206646FD /* Pods-OpenWeatherMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenWeatherMapUITests/Pods-OpenWeatherMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		966BDC9A055090D5D5624EDE /* Pods-OpenWeatherMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenWeatherMapUITests/Pods-OpenWeatherMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9733E613E6EC11B125C9FBF1 /* Pods_OpenWeatherMapService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeatherMapService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,8 +139,6 @@
 				76B13AD0202024E90050FBCF /* OpenWeatherMap */,
 				76B13AE8202024E90050FBCF /* OpenWeatherMapTests */,
 				76B13AF3202024E90050FBCF /* OpenWeatherMapUITests */,
-				76B13B10202027E20050FBCF /* OpenWeatherMapService */,
-				76B13B1D202027E20050FBCF /* OpenWeatherMapServiceTests */,
 				76B13ACF202024E90050FBCF /* Products */,
 				066C2ECE3C9E369A426DFBAE /* Pods */,
 				B2839E3C8421DCC0556EE984 /* Frameworks */,
@@ -211,25 +204,6 @@
 				76B13B062020278E0050FBCF /* BaseDelegate.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		76B13B10202027E20050FBCF /* OpenWeatherMapService */ = {
-			isa = PBXGroup;
-			children = (
-				76B13B11202027E20050FBCF /* OpenWeatherMapService.h */,
-				76B13B2D202028CD0050FBCF /* BaseService.swift */,
-				76B13B12202027E20050FBCF /* Info.plist */,
-			);
-			path = OpenWeatherMapService;
-			sourceTree = "<group>";
-		};
-		76B13B1D202027E20050FBCF /* OpenWeatherMapServiceTests */ = {
-			isa = PBXGroup;
-			children = (
-				76B13B1E202027E20050FBCF /* OpenWeatherMapServiceTests.swift */,
-				76B13B20202027E20050FBCF /* Info.plist */,
-			);
-			path = OpenWeatherMapServiceTests;
 			sourceTree = "<group>";
 		};
 		B2839E3C8421DCC0556EE984 /* Frameworks */ = {
