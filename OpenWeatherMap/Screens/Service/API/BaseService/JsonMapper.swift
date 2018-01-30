@@ -2,7 +2,7 @@ import ObjectMapper
 
 class JsonMapper {
 
-    func jsonMapper<Response: BaseMappable>(_ response: [String : Any]?) throws -> Response {
+    func mapper<Response: BaseMappable>(_ response: [String : Any]?) throws -> Response {
         guard
             let jsonAny = response else {
                 throw OpenWeatherMapError.mapperErrorResponseNil }

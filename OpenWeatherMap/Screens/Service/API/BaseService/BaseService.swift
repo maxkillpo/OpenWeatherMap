@@ -35,8 +35,10 @@ class BaseService<Response: BaseResponseModel> {
                 return try JSON(data: data)
             }
             .map { json in
-                return try JsonMapper()
-                    .jsonMapper(json.dictionaryObject)
-        }
+                let jsonMapper = JsonMapper()
+                return try jsonMapper.mapper(json.dictionaryObject)
+            }
+            .flatMap { response in
+                return try self.validateResponse(response: response) }
     }
 }
