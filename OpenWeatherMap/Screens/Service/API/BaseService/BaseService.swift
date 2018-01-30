@@ -1,13 +1,14 @@
 import RxSwift
 import RxCocoa
 import SwiftyJSON
+import ObjectMapper
 
-class BaseService {
+class BaseService<Response: BaseMappable> {
 
     private let baseURL = URL(string: "http://api.openweathermap.org/data/2.5")!
     private let session = URLSession.shared
 
-    func buildRequest(method: String = "GET", pathComponent: String, params: [String: Any]) -> Observable<JSON> {
+    func buildRequest(method: String = "GET", pathComponent: String, params: [String: Any]) -> Observable<Response> {
 
         let url = baseURL.appendingPathComponent(pathComponent)
         var request = URLRequest(url: url)
@@ -26,5 +27,8 @@ class BaseService {
             .map { data in
                 try JSON(data: data)
         }
+            .map { json in
+                try JsonMapper()
+                    .jsonMapper(json.dictionaryObject)}
     }
 }

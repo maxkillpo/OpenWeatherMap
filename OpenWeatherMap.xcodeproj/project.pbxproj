@@ -309,10 +309,18 @@
 		76B13B4A20205F550050FBCF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				76B13B56202076140050FBCF /* BaseService */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		76B13B56202076140050FBCF /* BaseService */ = {
+			isa = PBXGroup;
+			children = (
 				76B13B3A20202C390050FBCF /* BaseService.swift */,
 				76B13B4120203FB20050FBCF /* JsonMapper.swift */,
 			);
-			path = API;
+			path = BaseService;
 			sourceTree = "<group>";
 		};
 		B2839E3C8421DCC0556EE984 /* Frameworks */ = {
