@@ -66,7 +66,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
         guard let T = temp else {
             return "nil"
         }
-        return String(T - 32 / 1.800000)
+        return String(T - 273.15)
     }
 
     func validateHumidity(humidity: Int?) -> String {
