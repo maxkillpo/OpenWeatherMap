@@ -48,11 +48,11 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
-        search.map { String(describing: $0.list?[0].main?.temp) }
+        search.map { self.calculateTemp(temp: $0.list?[0].main?.temp) }
             .drive(temperatureLabel.rx.text)
             .disposed(by: disposeBag)
 
-        search.map { String(describing: $0.list?[0].main?.humidity) }
+        search.map { self.validateHumidity(humidity: $0.list?[0].main?.humidity) }
             .drive(pleasureLabel.rx.text)
             .disposed(by: disposeBag)
 
@@ -60,5 +60,19 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(countryLabel.rx.text)
             .disposed(by: disposeBag)
 
+    }
+
+    func calculateTemp(temp: Double?) -> String {
+        guard let T = temp else {
+            return "nil"
+        }
+        return String(T - 32 / 1.800000)
+    }
+
+    func validateHumidity(humidity: Int?) -> String {
+        guard let H = humidity else {
+            return "nil"
+        }
+        return String(H)
     }
 }
