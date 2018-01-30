@@ -102,6 +102,6 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
         guard let H = humidity else {
             return "E"
         }
-        return String(H)
+        return String(H) + " %"
     }
 }
