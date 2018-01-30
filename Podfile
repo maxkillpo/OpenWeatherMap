@@ -1,20 +1,26 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '9.0'
 
 target 'OpenWeatherMap' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
 
-  # Pods for OpenWeatherMap
+    pod 'RxSwift', '4.0.0'
+    pod 'RxCocoa', '4.0.0'
+    pod 'RxAlamofire', '4.0.0'
+    pod 'IQKeyboardManagerSwift', '5.0.0'
+    pod 'AlamofireObjectMapper', '5.0'
 
-  target 'OpenWeatherMapTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    # Pods for OpenWeatherMap
 
-  target 'OpenWeatherMapUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    target 'OpenWeatherMapTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+
+    target 'OpenWeatherMapUITests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
 
 end
