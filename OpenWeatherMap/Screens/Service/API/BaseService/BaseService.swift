@@ -7,7 +7,7 @@ class BaseService<Response: BaseResponseModel> {
     private let baseURL = URL(string: "http://api.openweathermap.org/data/2.5")!
     private let session = URLSession.shared
 
-    func validateResponse(response: Response) throws -> Observable<Response>{
+    func validateResponse(response: Response) throws -> Observable<Response> {
         guard response.cod == 200 else {
             throw OpenWeatherMapError.responseErrorNon200
         }
@@ -24,6 +24,7 @@ class BaseService<Response: BaseResponseModel> {
         params.forEach { key,value in
             queryItems.append(URLQueryItem(name: key, value: String(describing: value)))
         }
+
         urlComponents.queryItems = queryItems
         request.url = urlComponents.url!
         request.httpMethod = method
@@ -31,14 +32,11 @@ class BaseService<Response: BaseResponseModel> {
 
         return session.rx.data(request: request)
             .map { data in
-                try JSON(data: data)
-        }
+                return try JSON(data: data)
+            }
             .map { json in
-                try JsonMapper()
+                return try JsonMapper()
                     .jsonMapper(json.dictionaryObject)
-        }
-        .map { response in
-            try self.validateResponse(response: response)
         }
     }
 }
