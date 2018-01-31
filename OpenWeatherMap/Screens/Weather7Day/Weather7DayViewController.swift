@@ -33,9 +33,7 @@ class Weather7DayViewController: BaseViewController<Weather7DayViewModel> {
                 .items(cellIdentifier: "WeatherTableViewCell",
                        cellType: WeatherTableViewCell.self))
             { (row,element,cell) in
-                cell.tempLabel.text = String(element.main?.temp ?? 0.0) + " C"
-                cell.humidityLabel.text = String(element.main?.humidity ?? 0) + " %"
-                cell.time.text = element.dt_txt ?? "-"
+                cell.setup(model: element)
             }
             .disposed(by: disposeBag)
     }

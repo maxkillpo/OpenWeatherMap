@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="100" id="wFe-i5-bCK"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="กรอกไอดีชื่อเมือง" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-Xg-Ihj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-Xg-Ihj">
                                 <rect key="frame" x="138" y="109" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ewJ-vo-jLf"/>

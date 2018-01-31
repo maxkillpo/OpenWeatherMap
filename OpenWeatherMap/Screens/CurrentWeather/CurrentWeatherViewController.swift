@@ -36,11 +36,11 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             }
             .asDriver(onErrorJustReturn: WeahterResponseModel().isError())
 
-        search.map { self.calculateKelvinToCessasius(temp: $0.list?[0].main?.temp) }
+        search.map { self.viewModel.displayTemp(temp: $0.list?[0].main?.temp) }
             .drive(temperatureLabel.rx.text)
             .disposed(by: disposeBag)
 
-        search.map { self.validateHumidity(humidity: $0.list?[0].main?.humidity) }
+        search.map { self.viewModel.displayHumidity(humidity: $0.list?[0].main?.humidity) }
             .drive(pleasureLabel.rx.text)
             .disposed(by: disposeBag)
 
@@ -86,36 +86,5 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
         pages2
             .drive()
             .disposed(by: disposeBag)
-    }
-
-    func switchCalculate(int: Int,temp: Double?) -> String {
-        switch int {
-        case 1:
-            return calculateKelvinToCessasius(temp: temp)
-        case 2:
-            return calculateKelvinToFahrenheit(temp: temp)
-        default: return ""
-        }
-    }
-
-    func calculateKelvinToCessasius(temp: Double?) -> String {
-        guard let T = temp else {
-            return "E"
-        }
-        return String((T - 273.15).rounded(toPlaces: 10)) + " C"
-    }
-
-    func calculateKelvinToFahrenheit(temp: Double?) -> String {
-        guard let T = temp else {
-            return "E"
-        }
-        return String(((T - 273.15) * 1.8000 + 32.00).rounded(toPlaces: 10)) + " F"
-    }
-
-    func validateHumidity(humidity: Int?) -> String {
-        guard let H = humidity else {
-            return "E"
-        }
-        return String(H) + " %"
     }
 }

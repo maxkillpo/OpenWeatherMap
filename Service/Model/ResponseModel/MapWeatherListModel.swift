@@ -18,11 +18,3 @@ open class MapListModel: Mappable {
         dt_txt <- map["dt_txt"]
     }
 }
-
-extension MapListModel {
-
-    func isNil() {
-        
-    }
-
-}
