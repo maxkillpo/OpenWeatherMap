@@ -78,7 +78,7 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .map { text in
                 self.performSegue(withIdentifier: Segue.weather7Day) { (segue) in
                     let vc = segue.destination as? Weather7DayViewController
-                    vc?.cityID = text ?? "0"
+                    vc?.cityName = text ?? "0"
                 }
             }
             .asDriver()

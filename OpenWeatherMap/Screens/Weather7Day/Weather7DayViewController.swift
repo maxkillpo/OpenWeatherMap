@@ -6,14 +6,14 @@ class Weather7DayViewController: BaseViewController<Weather7DayViewModel> {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameCityLabel: UILabel!
-    var cityID: String?
+    var cityName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = Weather7DayViewModel()
 
         let items = viewModel
-            .requestWeather(cityID: cityID)
+            .requestWeather(cityID: cityName)
         
         let nameCity = items
             .map { $0.city?.name ?? "No City" }
