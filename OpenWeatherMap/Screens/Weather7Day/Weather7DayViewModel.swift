@@ -10,5 +10,4 @@ class Weather7DayViewModel: BaseViewModel {
         }
         return service.callService(request: WeahterRequestModel.init(id: id, cnt: "7"))
     }
-
 }

@@ -38,4 +38,3 @@ class Weather7DayViewController: BaseViewController<Weather7DayViewModel> {
             .disposed(by: disposeBag)
     }
 }
-

@@ -66,7 +66,6 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
-
         let pages2ButtonInput = page2Button
             .rx
             .controlEvent(.touchUpInside)
