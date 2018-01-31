@@ -13,7 +13,7 @@
         <!--Current Weather View Controller-->
         <scene sceneID="jpo-qG-sd7">
             <objects>
-                <viewController id="NTR-qe-tMj" customClass="CurrentWeatherViewController" customModule="OpenWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentWeatherViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NTR-qe-tMj" customClass="CurrentWeatherViewController" customModule="OpenWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pzs-K7-RX0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
