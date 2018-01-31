@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WuU-Ix-mmQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tZh-t6-4UK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,20 +44,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52E-Bs-khp">
+                                                    <rect key="frame" x="40" y="44" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lJI-dz-VPn" firstAttribute="height" secondItem="FQ9-js-9pC" secondAttribute="height" id="DCQ-YQ-DKH"/>
+                                                <constraint firstItem="52E-Bs-khp" firstAttribute="centerY" secondItem="ZWE-9B-kmO" secondAttribute="centerY" id="OC3-er-cZB"/>
                                                 <constraint firstItem="lJI-dz-VPn" firstAttribute="top" secondItem="FQ9-js-9pC" secondAttribute="bottom" constant="10" id="Umq-AZ-WwP"/>
                                                 <constraint firstAttribute="trailing" secondItem="FQ9-js-9pC" secondAttribute="trailing" constant="10" id="Wxo-1z-yPJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="lJI-dz-VPn" secondAttribute="bottom" constant="10" id="ZsR-hD-b1n"/>
                                                 <constraint firstItem="lJI-dz-VPn" firstAttribute="width" secondItem="FQ9-js-9pC" secondAttribute="width" id="oVo-de-8jZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="lJI-dz-VPn" secondAttribute="trailing" constant="10" id="rHI-2D-UxG"/>
+                                                <constraint firstItem="52E-Bs-khp" firstAttribute="leading" secondItem="ZWE-9B-kmO" secondAttribute="leading" constant="40" id="rqH-fb-wjO"/>
                                                 <constraint firstItem="FQ9-js-9pC" firstAttribute="top" secondItem="ZWE-9B-kmO" secondAttribute="top" constant="10" id="vzH-FV-loG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="humidityLabel" destination="lJI-dz-VPn" id="fGz-5W-epb"/>
                                             <outlet property="tempLabel" destination="FQ9-js-9pC" id="yQQ-o6-vFY"/>
+                                            <outlet property="time" destination="52E-Bs-khp" id="I10-hE-fPR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

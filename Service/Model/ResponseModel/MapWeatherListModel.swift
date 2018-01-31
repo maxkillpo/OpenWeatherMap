@@ -5,6 +5,7 @@ open class MapListModel: Mappable {
     public var dt: Int?
     public var main: MapMainListModel?
     public var weather: [MapWeatherListModel]?
+    public var dt_txt: String?
 
     public init() {}
 
@@ -14,5 +15,14 @@ open class MapListModel: Mappable {
         dt <- map["dt"]
         main <- map["main"]
         weather <- map["weather"]
+        dt_txt <- map["dt_txt"]
     }
+}
+
+extension MapListModel {
+
+    func isNil() {
+        
+    }
+
 }

@@ -6,7 +6,7 @@ class Weather7DayViewController: BaseViewController<Weather7DayViewModel> {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameCityLabel: UILabel!
-    var cityID = String()
+    var cityID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,16 +14,28 @@ class Weather7DayViewController: BaseViewController<Weather7DayViewModel> {
 
         let items = viewModel
             .requestWeather(cityID: cityID)
-            .map { $0.list ?? [MapListModel]() }
+        
+        let nameCity = items
+            .map { $0.city?.name ?? "No City" }
+            .asDriver(onErrorJustReturn: "")
 
-        items
+        nameCity
+            .drive(nameCityLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        let itemsList = items
+            .map { $0.list ?? [MapListModel()] }
+            .catchErrorJustReturn([])
+
+        itemsList
             .bind(to: tableView
                 .rx
                 .items(cellIdentifier: "WeatherTableViewCell",
                        cellType: WeatherTableViewCell.self))
             { (row,element,cell) in
-                cell.tempLabel.text = String(element.main?.temp ?? 0.0)
-                cell.humidityLabel.text = String(element.main?.humidity ?? 0)
+                cell.tempLabel.text = String(element.main?.temp ?? 0.0) + " C"
+                cell.humidityLabel.text = String(element.main?.humidity ?? 0) + " %"
+                cell.time.text = element.dt_txt ?? "-"
             }
             .disposed(by: disposeBag)
     }

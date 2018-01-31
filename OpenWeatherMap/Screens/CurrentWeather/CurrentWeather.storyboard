@@ -127,11 +127,20 @@
                         <outlet property="searchCitiesTextField" destination="8Pa-Xg-Ihj" id="MFe-Sd-qJD"/>
                         <outlet property="showImageVIew" destination="Vhs-VA-d7s" id="f7d-Mu-NpH"/>
                         <outlet property="temperatureLabel" destination="0C8-5H-Xk4" id="iDk-lJ-aj8"/>
+                        <segue destination="yJV-Lj-5X8" kind="show" identifier="Weather7Day" id="fIL-xZ-LfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EX7-3g-hym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="560.79999999999995" y="117.39130434782609"/>
+        </scene>
+        <!--Weather7Day-->
+        <scene sceneID="PDJ-GV-iM5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Weather7Day" id="yJV-Lj-5X8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="858-9C-afz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CfG-Gr-f4s">

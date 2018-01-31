@@ -36,20 +36,6 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             }
             .asDriver(onErrorJustReturn: WeahterResponseModel().isError())
 
-        let running = Observable
-            .from([
-                searchInput.map { _ in true },
-                search.map { _ in false }.asObservable()
-                ])
-            .merge()
-            .startWith(true)
-            .asDriver(onErrorJustReturn: false)
-
-        running
-            .skip(1)
-            .drive(activityIndicator.rx.isAnimating)
-            .disposed(by: disposeBag)
-
         search.map { self.calculateKelvinToCessasius(temp: $0.list?[0].main?.temp) }
             .drive(temperatureLabel.rx.text)
             .disposed(by: disposeBag)
@@ -66,12 +52,40 @@ class CurrentWeatherViewController: BaseViewController<CurrentWeatherViewModel> 
             .drive(errorLabel.rx.text)
             .disposed(by: disposeBag)
 
-        changeuUnitsButton
+        let running = Observable
+            .from([
+                searchInput.map { _ in true },
+                search.map { _ in false }.asObservable()
+                ])
+            .merge()
+            .startWith(true)
+            .asDriver(onErrorJustReturn: false)
+
+        running
+            .skip(1)
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+
+
+        let pages2ButtonInput = page2Button
             .rx
             .controlEvent(.touchUpInside)
-            .map { false }
             .asObservable()
+            .map { self.searchCitiesTextField.text }
+            .asDriver(onErrorJustReturn: "")
 
+        let pages2 = pages2ButtonInput
+            .map { text in
+                self.performSegue(withIdentifier: Segue.weather7Day) { (segue) in
+                    let vc = segue.destination as? Weather7DayViewController
+                    vc?.cityID = text ?? "0"
+                }
+            }
+            .asDriver()
+
+        pages2
+            .drive()
+            .disposed(by: disposeBag)
     }
 
     func switchCalculate(int: Int,temp: Double?) -> String {
